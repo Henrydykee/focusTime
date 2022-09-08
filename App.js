@@ -5,9 +5,13 @@ import { Focus } from './src/features/focus/focus';
 
 export default function App() {
   const [focusSubject, setFocusedSubject] = useState(null);
+  
   return (
     <View style={styles.container}>
-     <Focus/>
+      {
+      focusSubject  ? (<Text>here is where i am going to build a timer</Text>) : ( <Focus addSubject={setFocusedSubject}></Focus>)
+      }
+      <Text>{focusSubject}</Text>
     </View>
   );
 }
